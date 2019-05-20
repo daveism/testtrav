@@ -6,8 +6,6 @@ git:
 
 addons:
   snaps:
-    - name: hugo
-      channel: extended/stable
     - name: aws-cli
       channel: latest/stable
       classic: true
@@ -18,5 +16,5 @@ deploy:
   on:
     branch: master
   provider: script
-  script: ./deploy.sh
+  script: ./scripts/deploy.sh
   skip_cleanup: true
