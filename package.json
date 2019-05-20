@@ -1,0 +1,19 @@
+{
+  "name": "testtrav",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daveism/testtrav.git"
+  },
+  "author": "NEMAC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daveism/testtrav/issues"
+  },
+  "homepage": "https://github.com/daveism/testtrav#readme"
+}
