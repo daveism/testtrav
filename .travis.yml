@@ -1,21 +1,24 @@
-language: python
-python:
-  - "3.5"
-before_deploy:
-  pip install --user awscli
-deploy:
-  provider: script
-  script: ~/.local/bin/aws s3 sync dist s3://testtrav --delete
-  skip_cleanup: true
+language: node_js
 
-# language: node_js
-# node_js:
-# - node
-# deploy:
-#   provider: s3
-#   access_key_id:
-#     secure: ufamU+FWyOLNwWY+mz26BMEYVvTRq/T4zG0Rmw8E7Asu8rLF7TUTmFIpEtYvJONtG44QReBcuUEubivarbg2C7CGa0y67xahe2vjIzTv2CTO+VmT6rkUtbD+/vqGmdFpPHK1LtEucDuoauvwWFp+kxTh04Zc71hsBI4pObMpwoUeaSM1ZYOJkJ4Ca4xlmrxRsyqv7EtNVwqhC/V/c8ZcNJ8KR+X5zufDtuTmIAu0m3nhHnXVJ401vAqdzeE6ONJRQfiC8s5biX+dMw7lRaISqy8IJU/nrZRsqeAouZe5V+HtuOnNXfodPZuj0j8K/ReyQhZU0xioowqnXtC2s2O61s9D67UQmwIlckdOl6DeLd4KPEVfrnIMnBULv1WP6a3AheBIpVo9HbnAOYZs8tKZ7PYVQyENFSpWPHT55mmSWbNo+uzjbX5iCKDesyMClYfs7gtIroh2lY1DnbpazjcmjnbeyPYsT/nA9o6xomVWM3Ql7WuNPksKpuzh1wHoKF1z6wiBSfFi2qjAhCfIU5xQaMj69BCtcJQyjk+c1wQZI0IT7aoP9/nbt1DhRvMSQv0sYBWdIHpQSkj9iQoXHuE+2n3cH4bDavkLv7Q7rHr1+VqG8WDgoNjlad6mhVsY17bNttKSuvcaBmXzu+EYxa0gcQe4eIrIhyl554bmkUZRIHI=
-#   bucket: testtrav
-#   acl: public_read
-#   secret_access_key:
-#     secure: vnmzsx5XQMAkab49TK0HYhAWOVaBmS1gGrs2W2nZA2bUXp/kg8ZobNZHuGwJIttG17NGNlkwHdiAjICaHfy7unqxhyWhGTCnl+coOOQS/wbHkA0hebRdD43gnEn0WeFckjpUyfiZYdxtyckn7aDeYcpnbSSJ8fzithP17vXmJQnadLe3Aq0pxPQrHnFiKhbcEEdW9SpBRSVWkVd3xEFlwIL21svzDxf7Iq8wvy5Zl7XT9dE3bsazJ89re5Sz81/A7dQtNMw6/eVxTkqsXFXDtM2VMofY7gpEaHBDWAsEqoqQljEKnKdNWVVXVZZ/HJ3SRZyV5XYEYuaIBpxiQleRJ1HxMB3QjTyIb4SQ13T0pRN0cXzwn95YLvQyx/bpefTkoHY6CX/ofkzDz7V/4NimzeiQQmi7ceLopvVx5ZkxQSqq0QtSoNuGRHroRBqONbhFLhiA3NmmK64Mv6GOL53g8juBGiOaCJt3ygfR82EVSvs9H//ghEdS/5xxq+tmu+ouqbLD+576DmnkHzY7wSpihrDfRVXgdoGp80phJjCtsM77KgIG0xXfpHXp3Hy8DAIzTiyXtbJSTG9TjSWdd2vRrOvML+NC7e/Hka7d1HjqS6fHvP/si+A0TcRe/g03Ezb0vHjy6zSh4upPdazPOIUkAynVkSkJCahHF1SZChhO1mA=
+git:
+  depth: 3
+
+
+addons:
+  snaps:
+    - name: hugo
+      channel: extended/stable
+    - name: aws-cli
+      channel: latest/stable
+      classic: true
+
+cache: npm
+
+script: make build
+
+deploy:
+  on:
+    branch: master
+  provider: script
+  script: ./deploy.sh
+  skip_cleanup: true
