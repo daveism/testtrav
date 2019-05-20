@@ -1,20 +1,12 @@
-language: node_js
-
-git:
-  depth: 3
-
-
-addons:
-  snaps:
-    - name: aws-cli
-      channel: latest/stable
-      classic: true
-
-cache: npm
-
+language: python
+python:
+    - "2.7"
 deploy:
-  on:
-    branch: master
-  provider: script
-  script: ./scripts/deploy.sh
-  skip_cleanup: true
+    provider: s3
+    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
+    secret_access_key: $AWS_SECRET_KEY
+    bucket:  testtrav
+    skip_cleanup: true
+    local-dir: public
+    acl: public_read
+    detect_encoding: true
