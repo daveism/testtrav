@@ -3,9 +3,9 @@ node_js:
 - 8.9.4
 deploy:
   provider: s3
-  access_key_id: $AWS_KEY
-  secret_access_key: $AWS_SECRET
-  bucket: "<YOUR BUCKET NAME>"
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  bucket: "testtrav"
   skip_cleanup: true
   acl: public_read
   local_dir: public
