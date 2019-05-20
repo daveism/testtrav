@@ -7,5 +7,5 @@ deploy:
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: "testtrav"
   acl: public_read
-  local-dir: public
+  local_dir: /public
   skip_cleanup: true
