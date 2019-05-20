@@ -1,1 +1,4 @@
-aws s3 sync index.html s3://testtrav --delete
+#!/usr/bin/env bash
+set -ex
+
+aws s3 sync public s3://testtrav  --acl public-read

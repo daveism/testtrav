@@ -14,8 +14,6 @@ addons:
 
 cache: npm
 
-script: make build
-
 deploy:
   on:
     branch: master
