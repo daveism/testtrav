@@ -1,7 +1,7 @@
 # before_deploy: pip install --user awscli
-deploy:
-  provider: script
-  skip_cleanup: true
+# deploy:
+#   provider: script
+#   skip_cleanup: true
 env:
   global:
   - secure: x5rU+hjYPTZN6ioZm8HZ2QzMA5YImIHTS4q/MgKxvOMOkaZXFyBjbC7dIiRnRNl3NlCGKTw9XSxxxSqM+6XEQzj4aG45oy7eHdAueFqLS3nC86/j1N0fh6cDNG0KoLhteEK8sm1JidzSSrPjPq5bVFLbll84ZSPjnylFcGdcXoj1Be0NJd7ZJj7PWrCrOspD9Z837nxhwczqNr0dFW6NGi+1EJzUezyeTbMRcxAwnKqLOlc8lIos4/yCBK7FBoZ0IWqxCMFDaZ4CyD6DfxEdKpbim+/rrEO2vhu8wv1kcsbDk4Df84O5RPJZbzB6NdTsG45FMaEWshinoVi5PO7lb0z6CDzcSi/C9yLZav/vP8e9UtovekGWhlVGPNR3cY6QZBKohw1VftDOJi0PrGO2udNkGBU35O1V6ru6OSLscyrphJG1U+u3rN3I6G2uZVTFlklwIoRwbg74yDYfEIlWdu+s16nMkWXv1P5XiAghurKdE4gL/45xmOc3yPgeUFhi2RNP7sTN6hGMG8/um5A2kdM5lWf3TNV8vZ0nk6JpNgUrZHeq6kGS+ZT03iZD1MKEvfi4yr+aDy+ZzrPVReMh6Kvlpu/c8+ikGMendEC+ueCLGrIZcglbp15szVMugFwV8Ry+jXFzbScJYyx7qDmDXVD4wsLRdrWeBjDTJpHwNHc=
