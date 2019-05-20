@@ -1,12 +1,11 @@
-language: python
-python:
-    - "2.7"
+language: node_js
+node_js:
+- 8.9.4
 deploy:
-    provider: s3
-    access_key_id: $AWS_ACCESS_KEY # declared in Travis repo settings
-    secret_access_key: $AWS_SECRET_KEY
-    bucket:  testtrav
-    skip_cleanup: true
-    local-dir: public
-    acl: public_read
-    detect_encoding: true
+  provider: s3
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET
+  bucket: "<YOUR BUCKET NAME>"
+  skip_cleanup: true
+  acl: public_read
+  local_dir: public
