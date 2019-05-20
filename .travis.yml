@@ -1,6 +1,6 @@
-git:
-  depth: 3
-install:
-  - "sudo apt install awscli"
-script: echo 'test'
-sudo: required
+before_deploy:
+  pip install --user awscli
+deploy:
+  provider: script
+  # script: ~/.local/bin/aws s3 sync dist s3://MY_BUCKET_NAME --region=us-west-2 --delete
+  skip_cleanup: true
