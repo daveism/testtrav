@@ -9,4 +9,3 @@ deploy:
   acl: public_read
   local_dir: dist
   skip_cleanup: true
-  
